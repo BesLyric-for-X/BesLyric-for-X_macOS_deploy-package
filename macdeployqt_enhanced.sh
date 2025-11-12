@@ -26,6 +26,17 @@ FRAMEWORKS_DIR_PATH="${APP_FILE_PATH}/Contents/Frameworks"
 echo "FRAMEWORKS_DIR_PATH = '${FRAMEWORKS_DIR_PATH}'"
 
 
+# copy libsharpyuv and wait for our own processing
+#   chain:
+#   - ffmpeg (libavformat.58.dylib)
+#   - webp (libwebp.7.dylib)
+#   - libsharpyuv (@rpath/libsharpyuv.0.dylib)
+mkdir -p "$FRAMEWORKS_DIR_PATH"
+cp -a \
+    "$(readlink -f "$(brew --prefix --installed webp)/lib/libsharpyuv.0.dylib")" \
+    "$FRAMEWORKS_DIR_PATH/libsharpyuv.0.dylib"
+
+
 # Call macdeployqt
 echo
 echo '====== Calling macdeployqt ======'
