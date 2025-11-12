@@ -13,7 +13,6 @@ set -u
 echo "IMAGEMAGICK_PATH = '${IMAGEMAGICK_PATH}'"
 echo "CREATE_DMG_PATH = '${CREATE_DMG_PATH}'"
 echo "APP_FILE_PATH = '${APP_FILE_PATH}'"
-echo "ICON_FILE_PATH = '${ICON_FILE_PATH}'"
 echo "OUTPUT_DMG_PATH = '${OUTPUT_DMG_PATH}'"
 
 
@@ -67,7 +66,6 @@ echo '====== Calling create-dmg ======'
 "${CREATE_DMG_PATH}" \
     --hdiutil-verbose \
     --volname "${OUTPUT_DMG_FILE_BASENAME}" \
-    --volicon "${ICON_FILE_PATH}" \
     --background "${dmg_background_pic_file_path}" \
     --window-size 500 352 \
     --icon-size 100 \

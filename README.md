@@ -56,7 +56,6 @@ Or, a fancy one:
 IMAGEMAGICK_PATH='path/to/magick' \
  CREATE_DMG_PATH='path/to/create-dmg' \
    APP_FILE_PATH='path/to/app_bundle.app' \
-  ICON_FILE_PATH='path/to/icon.icns' \
  OUTPUT_DMG_PATH='path/to/generated.dmg' \
     bash package_cdmg.sh
 ```
